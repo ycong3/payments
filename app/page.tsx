@@ -1048,18 +1048,20 @@ export default function PaymentRecorderApp() {
 
             <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 pb-10 shadow-md">
               <div className="max-w-md mx-auto">
-                <button
-                  className="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-medium transition-colors mb-2"
-                  onClick={recordPayment}
-                >
-                  Record ${includeTax ? totalWithTax.toFixed(2) : orderValue.toFixed(2)}
-                </button>
-                <button
-                  className="w-full py-2 text-gray-600 hover:bg-gray-100 rounded-md"
-                  onClick={() => setCurrentView("home")}
-                >
-                  Cancel
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    className="py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md font-medium transition-colors w-1/4"
+                    onClick={() => setCurrentView("home")}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="flex-1 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-md font-medium transition-colors"
+                    onClick={recordPayment}
+                  >
+                    Record ${includeTax ? totalWithTax.toFixed(2) : orderValue.toFixed(2)}
+                  </button>
+                </div>
               </div>
             </div>
           </>
